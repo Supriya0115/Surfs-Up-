@@ -1,5 +1,3 @@
-Jupyter Notebook for Climate Analysis and Precipitation - Main/Climate_Analysis.ipynb
-Python .py for Climate App through Flask - Main/Climate_App.py
 
 ## Step 1 - Climate Analysis and Exploration
 
@@ -44,3 +42,8 @@ Python .py for Climate App through Flask - Main/Climate_App.py
 Design a Flask API based on the queries that you have just developed.
 
 * Use FLASK to create  routes.
+
+Please see -
+* Jupyter Notebook for Climate Analysis and Precipitation - Main/Climate_Analysis.ipynb
+* Python .py for Climate App through Flask - Main/Climate_App.py
+
