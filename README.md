@@ -1,5 +1,4 @@
 
-
 ## Step 1 - Climate Analysis and Exploration
 
 * Climate analysis and data exploration of your climate database. All of the following analysis are completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
@@ -43,3 +42,8 @@
 Design a Flask API based on the queries that you have just developed.
 
 * Use FLASK to create  routes.
+
+Please see -
+* Jupyter Notebook for Climate Analysis and Precipitation - Main/Climate_Analysis.ipynb
+* Python .py for Climate App through Flask - Main/Climate_App.py
+
