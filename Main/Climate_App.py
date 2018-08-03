@@ -106,13 +106,13 @@ def tobs():
 # When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date.
 # When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.
 
-@app.route("/api/v1.0/<start>")
+@app.route("/api/v1.0/<startdate>")
 def start_date(startdate):
     #Parse the date 
     St_Date = dt.datetime.strptime(startdate,"%Y-%m-%d")
 
     # Calculate summary stats
-    summary_stats = session.query(func.min(Measurement.tobs),func.max(Measurement.tobs),func.avg(Measurement.tobs)).\
+    summary_stats = session.query(func.min(Measurement.tobs),func.max(Measurement.tobs),func.round(func.avg(Measurement.tobs))).\
     filter(Measurement.date >= St_Date).all()
 
     summary = list(np.ravel(summary_stats))
@@ -121,14 +121,14 @@ def start_date(startdate):
     return jsonify(summary)
 
 # Same as above with the inclusion of an end date
-@app.route("/api/v1.0/<start>/<end>")
+@app.route("/api/v1.0/<startdate>/<enddate>")
 def daterange(startdate,enddate):
     #Parse the date 
     St_Date = dt.datetime.strptime(startdate,"%Y-%m-%d")
     En_Date = dt.datetime.strptime(enddate,"%Y-%m-%d")
 
     # Calculate summary stats
-    summary_stats = session.query(func.min(Measurement.tobs),func.max(Measurement.tobs),func.avg(Measurement.tobs)).\
+    summary_stats = session.query(func.min(Measurement.tobs),func.max(Measurement.tobs),func.round(func.avg(Measurement.tobs))).\
     filter(Measurement.date.between(St_Date,En_Date)).all()
     
     summary = list(np.ravel(summary_stats))
